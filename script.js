@@ -229,7 +229,7 @@ function openModal(imageSrc, caption) {
     
     modal.style.display = 'flex';
     modalImg.src = imageSrc;
-    modalCaption.innerHTML = caption;
+    modalCaption.innerHTML = ''; // Remove caption text
     
     // Prevent body scroll when modal is open
     document.body.style.overflow = 'hidden';
