@@ -185,19 +185,37 @@
         <div class="container">
             <h2>Testimonials</h2>
             <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <img src="images/image-1.jpeg" alt="Student Photo">
-                    <p class="testimonial-feedback">"Great instructor! Helped me pass my test on the first try. Highly recommend DriveXpert Driving School!"</p>
-                    <p class="testimonial-name">- Satisfied Student</p>
+                <div class="testimonial-card" onclick="openModal('images/feedback-1.jpeg', 'Student Feedback 1')">
+                    <img src="images/feedback-1.jpeg" alt="Student Feedback 1">
                 </div>
-                <div class="testimonial-card">
-                    <img src="images/image-2.jpeg" alt="Student Photo">
-                    <p class="testimonial-feedback">"Very patient and professional. The lessons were clear and easy to follow."</p>
-                    <p class="testimonial-name">- Happy Learner</p>
+                <div class="testimonial-card" onclick="openModal('images/feedback-2.jpeg', 'Student Feedback 2')">
+                    <img src="images/feedback-2.jpeg" alt="Student Feedback 2">
+                </div>
+                <div class="testimonial-card" onclick="openModal('images/feedback-3.jpeg', 'Student Feedback 3')">
+                    <img src="images/feedback-3.jpeg" alt="Student Feedback 3">
+                </div>
+                <div class="testimonial-card" onclick="openModal('images/feedback-4.jpeg', 'Student Feedback 4')">
+                    <img src="images/feedback-4.jpeg" alt="Student Feedback 4">
+                </div>
+                <div class="testimonial-card" onclick="openModal('images/feedback-5.jpeg', 'Student Feedback 5')">
+                    <img src="images/feedback-5.jpeg" alt="Student Feedback 5">
+                </div>
+                <div class="testimonial-card" onclick="openModal('images/feedback-6.jpeg', 'Student Feedback 6')">
+                    <img src="images/feedback-6.jpeg" alt="Student Feedback 6">
+                </div>
+                <div class="testimonial-card" onclick="openModal('images/feedback-7.jpeg', 'Student Feedback 7')">
+                    <img src="images/feedback-7.jpeg" alt="Student Feedback 7">
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal Popup -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div id="modalCaption"></div>
+    </div>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -216,11 +234,19 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <p>drivexpert247@gmail.com</p>
+                        <p>info@drivexpert.co.uk</p>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
                         <a href="https://maps.app.goo.gl/vA2RfnbfH5rtap3n6?g_st=ic" target="_blank">Lincoln Rd, Stevenage SG1 4PL, United Kingdom</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Letchworth, United Kingdom</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Hitchin, United Kingdom</p>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-clock"></i>
@@ -230,11 +256,11 @@
                         <a href="https://www.tiktok.com/@drivexpert12?_t=ZN-8xiWfkh41X4&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="tel" placeholder="Your Phone">
-                    <select required>
+                <form class="contact-form" action="https://formspree.io/f/mldnvqpw" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="tel" name="phone" placeholder="Your Phone">
+                    <select name="service" required>
                         <option value="">Select Service</option>
                         <option value="adult-lessons">Adult lessons</option>
                         <option value="private-lessons">Private lessons</option>
@@ -245,7 +271,7 @@
                         <option value="motorway-driving">Motorway Driving Lesson</option>
                         <option value="maneuver-lessons">Specific Maneuver Lessons</option>
                     </select>
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                     <button type="submit" class="submit-btn">Send Message</button>
                 </form>
             </div>
@@ -287,8 +313,10 @@
                 <div class="footer-section">
                     <h4>Contact Info</h4>
                     <p>07957 197984</p>
-                    <p>drivexpert247@gmail.com</p>
+                    <p>info@drivexpert.co.uk</p>
                     <p>Lincoln Rd, Stevenage SG1 4PL, United Kingdom</p>
+                    <p>Letchworth, United Kingdom</p>
+                    <p>Hitchin, United Kingdom</p>
                     <p>Open 24 hours</p>
                 </div>
             </div>

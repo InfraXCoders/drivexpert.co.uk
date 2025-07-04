@@ -39,19 +39,18 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Contact form handling
+// Contact form handling with Formspree
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
         // Get form data
-        const formData = new FormData(this);
-        const name = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        const phone = this.querySelector('input[type="tel"]').value;
-        const service = this.querySelector('select').value;
-        const message = this.querySelector('textarea').value;
+        const name = this.querySelector('input[name="name"]').value;
+        const email = this.querySelector('input[name="email"]').value;
+        const phone = this.querySelector('input[name="phone"]').value;
+        const service = this.querySelector('select[name="service"]').value;
+        const message = this.querySelector('textarea[name="message"]').value;
         
         // Basic validation
         if (!name || !email || !service || !message) {
@@ -66,10 +65,37 @@ if (contactForm) {
             return;
         }
         
-        // Here you would typically send the data to your server
-        // For now, we'll just show a success message
-        alert('Thank you for your message! We will get back to you soon.');
-        this.reset();
+        // Show loading state
+        const submitBtn = this.querySelector('.submit-btn');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        // Submit to Formspree
+        fetch(this.action, {
+            method: 'POST',
+            body: new FormData(this),
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            } else {
+                throw new Error('Network response was not ok');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Sorry, there was an error sending your message. Please try again or contact us directly.');
+        })
+        .finally(() => {
+            // Reset button state
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        });
     });
 }
 
@@ -187,4 +213,64 @@ document.addEventListener('DOMContentLoaded', () => {
     if (statsSection) {
         statsObserver.observe(statsSection);
     }
+});
+
+// Modal functionality for testimonial photos
+function openModal(imageSrc, caption) {
+    console.log('openModal called with:', imageSrc, caption);
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+    
+    if (!modal || !modalImg || !modalCaption) {
+        console.error('Modal elements not found:', { modal, modalImg, modalCaption });
+        return;
+    }
+    
+    modal.style.display = 'flex';
+    modalImg.src = imageSrc;
+    modalCaption.innerHTML = caption;
+    
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = 'hidden';
+    console.log('Modal opened successfully');
+}
+
+function closeModal() {
+    console.log('closeModal called');
+    const modal = document.getElementById('imageModal');
+    if (modal) {
+        modal.style.display = 'none';
+        // Restore body scroll
+        document.body.style.overflow = 'auto';
+        console.log('Modal closed successfully');
+    }
+}
+
+// Close modal when clicking outside the image
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('imageModal');
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+    
+    // Test click handlers for testimonial cards
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    console.log('Found testimonial cards:', testimonialCards.length);
+    testimonialCards.forEach((card, index) => {
+        card.addEventListener('click', function(e) {
+            console.log('Testimonial card clicked:', index);
+        });
+    });
 }); 
