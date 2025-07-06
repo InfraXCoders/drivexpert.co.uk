@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const images = document.querySelectorAll('img');
     images.forEach(img => {
         // Skip critical images (logos) to prevent flash
-        const isCriticalImage = img.src.includes('Logo') || img.alt.toLowerCase().includes('logo');
+        const isCriticalImage = img.src.includes('drivexpert-logo') || img.alt.toLowerCase().includes('logo');
         
         if (!isCriticalImage) {
             img.addEventListener('load', function() {
