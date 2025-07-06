@@ -164,23 +164,6 @@ document.querySelectorAll('.gallery-item img').forEach(img => {
     });
 });
 
-// Add loading animation for images
-document.addEventListener('DOMContentLoaded', () => {
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-        // Skip critical images (logos) to prevent flash
-        const isCriticalImage = img.src.includes('drivexpert-logo') || img.alt.toLowerCase().includes('logo');
-        
-        if (!isCriticalImage) {
-            img.addEventListener('load', function() {
-                this.style.opacity = '1';
-            });
-            img.style.opacity = '0';
-            img.style.transition = 'opacity 0.3s ease';
-        }
-    });
-});
-
 // Counter animation for stats
 function animateCounter(element, target, duration = 2000) {
     let start = 0;
@@ -277,5 +260,23 @@ document.addEventListener('DOMContentLoaded', () => {
         card.addEventListener('click', function(e) {
             console.log('Testimonial card clicked:', index);
         });
+    });
+});
+
+// Image-related functionality wrapped in window.onload
+window.addEventListener('load', () => {
+    // Add loading animation for images
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        // Skip critical images (logos) to prevent flash
+        const isCriticalImage = img.src.includes('drivexpert-logo') || img.alt.toLowerCase().includes('logo');
+        
+        if (!isCriticalImage) {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.3s ease';
+        }
     });
 }); 
