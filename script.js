@@ -272,11 +272,18 @@ window.addEventListener('load', () => {
         const isCriticalImage = img.src.includes('drivexpert-logo') || img.alt.toLowerCase().includes('logo');
         
         if (!isCriticalImage) {
-            img.addEventListener('load', function() {
-                this.style.opacity = '1';
-            });
-            img.style.opacity = '0';
-            img.style.transition = 'opacity 0.3s ease';
+            // Check if image is already loaded
+            if (img.complete && img.naturalHeight !== 0) {
+                // Image is already loaded, set opacity to 1 immediately
+                img.style.opacity = '1';
+            } else {
+                // Image is still loading, add load event listener
+                img.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                });
+                img.style.opacity = '0';
+                img.style.transition = 'opacity 0.3s ease';
+            }
         }
     });
 }); 
