@@ -168,11 +168,16 @@ document.querySelectorAll('.gallery-item img').forEach(img => {
 document.addEventListener('DOMContentLoaded', () => {
     const images = document.querySelectorAll('img');
     images.forEach(img => {
-        img.addEventListener('load', function() {
-            this.style.opacity = '1';
-        });
-        img.style.opacity = '0';
-        img.style.transition = 'opacity 0.3s ease';
+        // Skip critical images (logos) to prevent flash
+        const isCriticalImage = img.src.includes('Logo') || img.alt.toLowerCase().includes('logo');
+        
+        if (!isCriticalImage) {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.3s ease';
+        }
     });
 });
 
