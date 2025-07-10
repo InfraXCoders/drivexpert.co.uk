@@ -138,6 +138,34 @@ body {
         background-position: 100% 50%;
     }
 }
+
+/* Calling Animation for Phone Number */
+@keyframes calling {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.7);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(217, 119, 6, 0);
+    }
+}
+
+/* Test Animation for WhatsApp */
+@keyframes testAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-3px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(3px);
+    }
+}
 .hero-content h1 {
     font-size: 4rem;
     font-weight: 900;
