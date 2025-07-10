@@ -204,11 +204,15 @@ body {
     display: inline;
 }
 .hero-content .contact-info p.whatsapp-booking {
-    color: #00FF00;
+    background: linear-gradient(135deg, #00FF00 0%, #FF8C00 50%, #00FF00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-weight: 900;
     font-size: 1.3rem;
     display: inline;
     margin-left: 0.5em;
+    animation: testAnimation 2s ease-in-out infinite;
 }
 .hero-contact-number {
     background: rgba(251, 191, 36, 0.3); /* transparent yellow */
