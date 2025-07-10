@@ -210,6 +210,16 @@ body {
     display: inline;
     margin-left: 0.5em;
 }
+.hero-contact-number {
+    background: rgba(251, 191, 36, 0.3); /* transparent yellow */
+    padding: 0.2rem 0.7rem;
+    border-radius: 6px;
+}
+.hero-whatsapp {
+    background: rgba(5, 150, 105, 0.18); /* transparent green */
+    padding: 0.2rem 0.7rem;
+    border-radius: 6px;
+}
 .cta-button {
     display: inline-block;
     background: #fbbf24;
@@ -893,4 +903,21 @@ body {
     display: inline-block;
     vertical-align: middle;
     text-shadow: 0 2px 12px rgba(0,0,0,0.18), 0 1px 0 #fff;
+}
+.hero-languages {
+    color: #111;
+    background: rgba(251, 191, 36, 0.3); /* more transparent yellow */
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: inline-block;
+    margin-top: 2rem;
+}
+.hero-area-highlight {
+    background: rgba(37, 99, 235, 0.18); /* transparent blue */
+    color: #fff;
+    padding: 0.3rem 1rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-bottom: 1.2rem;
 } 
