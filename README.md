@@ -1,51 +1,69 @@
 # DriveXpert Website
 
-A professional, responsive website for DriveXpert driving services.
+A professional, responsive website for DriveXpert driving services with enhanced hero section and multi-language support.
 
 ## 🚀 Features
 
 - **Modern Design**: Clean, professional layout with smooth animations
+- **Enhanced Hero Section**: Contact info with transparent backgrounds and animations
+- **Multi-Language Support**: Help available in English, ਪੰਜਾਬੀ, हिंदी and اردو
 - **Fully Responsive**: Works perfectly on desktop, tablet, and mobile devices
 - **Interactive Elements**: Smooth scrolling, mobile navigation, contact forms
 - **SEO Optimized**: Proper meta tags and semantic HTML structure
 - **Fast Loading**: Optimized CSS and JavaScript for performance
+- **WhatsApp Integration**: Direct booking via WhatsApp
+- **Testimonials Gallery**: Student feedback with modal popups
 
 ## 📁 File Structure
 
 ```
-drive_xpert/
-├── index.html          # Main homepage
-├── styles.css          # All styling
+drivexpert.co.uk/
+├── index.html          # Main homepage with enhanced hero section
+├── styles.css          # All styling including hero animations
 ├── script.js           # JavaScript functionality
-├── images/             # Image assets (create this folder)
-│   ├── hero-car.jpg
-│   ├── about-us.jpg
-│   ├── gallery-1.jpg
-│   ├── gallery-2.jpg
-│   ├── gallery-3.jpg
-│   ├── gallery-4.jpg
-│   └── video-poster.jpg
-├── videos/             # Video assets (create this folder)
-│   └── drivexpert-intro.mp4
+├── images/             # Image assets
+│   ├── Background.jpeg
+│   ├── Background.png
+│   ├── drivexpert-logo-main.jpeg
+│   ├── drivexpert-logo-navbar.jpeg
+│   ├── gallery-driving-lesson.jpeg
+│   ├── gallery-instructor-car.jpeg
+│   ├── testimonial-amazing-service.jpeg
+│   ├── testimonial-confident-driver.jpeg
+│   ├── testimonial-excellent-instructor.jpeg
+│   ├── testimonial-great-experience.jpeg
+│   ├── testimonial-passed-first-time.jpeg
+│   ├── testimonial-patient-teaching.jpeg
+│   └── testimonial-recommended-school.jpeg
+├── CNAME               # Custom domain configuration
+├── googlea03d72be77270b04.html  # Google verification
+├── robots.txt          # Search engine optimization
 └── README.md           # This file
 ```
 
-## 🖼️ Required Images
+## 🎨 Recent Enhancements
 
-You'll need to add the following images to the `images/` folder:
+### Hero Section Improvements
+- **Contact Information**: Phone number with transparent yellow background
+- **WhatsApp Integration**: Direct booking link with transparent green background
+- **Area Coverage**: Service areas highlighted with transparent blue background
+- **Multi-Language Support**: Help text with animated transparent red background
+- **Smooth Animations**: Calling and test animations for better user engagement
 
-1. **hero-car.jpg** - Main hero image (recommended: 1200x800px)
-2. **about-us.jpg** - About section image (recommended: 600x400px)
-3. **gallery-1.jpg** - Gallery image 1 (recommended: 400x300px)
-4. **gallery-2.jpg** - Gallery image 2 (recommended: 400x300px)
-5. **gallery-3.jpg** - Gallery image 3 (recommended: 400x300px)
-6. **gallery-4.jpg** - Gallery image 4 (recommended: 400x300px)
-7. **video-poster.jpg** - Video thumbnail (recommended: 800x450px)
+### Visual Enhancements
+- Transparent backgrounds for better readability
+- Animated elements for increased engagement
+- Improved typography and spacing
+- Enhanced mobile responsiveness
 
-## 🎥 Required Videos
+## 🖼️ Current Images
 
-Add your video file to the `videos/` folder:
-- **drivexpert-intro.mp4** - Introduction video (recommended: 1920x1080px, max 50MB)
+The website currently includes:
+- **Background.jpeg/png** - Hero section background
+- **drivexpert-logo-main.jpeg** - Main logo for about section
+- **drivexpert-logo-navbar.jpeg** - Navigation logo
+- **Gallery Images** - Driving lesson and instructor car photos
+- **Testimonial Images** - Student feedback and reviews
 
 ## 🚀 Next Steps to Go Live
 
@@ -136,9 +154,10 @@ Edit the CSS variables in `styles.css`:
 - **HTML5**: Semantic markup for SEO
 - **CSS3**: Modern styling with Flexbox and Grid
 - **JavaScript**: Vanilla JS for interactivity
-- **Fonts**: Google Fonts (Inter)
+- **Fonts**: Google Fonts (Inter and Montserrat)
 - **Icons**: Font Awesome 6
 - **Responsive**: Mobile-first design approach
+- **Animations**: CSS keyframes for enhanced UX
 
 ## 📱 Testing
 
@@ -157,6 +176,7 @@ The website includes:
 - Alt text for images
 - Fast loading times
 - Mobile-friendly design
+- Custom domain configuration (CNAME)
 
 ## 📞 Support
 
@@ -167,9 +187,12 @@ For technical support or customization:
 
 ## 🚀 Launch Checklist
 
-- [ ] Add all required images
-- [ ] Add video file
-- [ ] Update contact information
+- [x] Enhanced hero section with animations
+- [x] Multi-language support added
+- [x] WhatsApp integration implemented
+- [x] Contact information with transparent backgrounds
+- [x] All required images added
+- [x] Contact information updated
 - [ ] Choose hosting provider
 - [ ] Deploy website
 - [ ] Connect domain
@@ -178,6 +201,16 @@ For technical support or customization:
 - [ ] Check loading speed
 - [ ] Verify contact form works
 - [ ] Test all links and navigation
+
+## 🎨 Hero Section Features
+
+The enhanced hero section includes:
+- **Animated Contact Info**: Phone number with calling animation
+- **WhatsApp Integration**: Direct booking with test animation
+- **Area Coverage Highlight**: Service areas with blue background
+- **Multi-Language Support**: Help text with red background animation
+- **Responsive Design**: Works on all device sizes
+- **Smooth Animations**: Enhanced user engagement
 
 ---
 
