@@ -24,7 +24,6 @@ drivexpert.co.uk/
 ├── images/             # Image assets
 │   ├── Background.jpeg
 │   ├── Background.png
-│   ├── drivexpert-logo-main.jpeg
 │   ├── drivexpert-logo-navbar.jpeg
 │   ├── gallery-driving-lesson.jpeg
 │   ├── gallery-instructor-car.jpeg
@@ -60,7 +59,6 @@ drivexpert.co.uk/
 
 The website currently includes:
 - **Background.jpeg/png** - Hero section background
-- **drivexpert-logo-main.jpeg** - Main logo for about section
 - **drivexpert-logo-navbar.jpeg** - Navigation logo
 - **Gallery Images** - Driving lesson and instructor car photos
 - **Testimonial Images** - Student feedback and reviews
