@@ -415,10 +415,8 @@ body {
     padding: 0 0;
 }
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    display: block;
+    max-width: 100%;
     margin-top: 0;
 }
 .about-text h2 {
@@ -768,8 +766,7 @@ body {
         font-size: 2.2rem;
     }
     .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        max-width: 100%;
     }
     .contact-content {
         grid-template-columns: 1fr;
