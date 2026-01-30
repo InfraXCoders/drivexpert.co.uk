@@ -419,15 +419,20 @@ body {
     max-width: 100%;
     margin-top: 0;
 }
+.about-text {
+    text-align: justify;
+}
 .about-text h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #1f2937;
+    text-align: left;
 }
 .about-text p {
     margin-bottom: 0.8rem;
     color: #6b7280;
     font-size: 1.1rem;
+    text-align: justify;
 }
 .stats {
     display: grid;
