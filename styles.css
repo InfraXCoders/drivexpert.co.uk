@@ -1400,11 +1400,20 @@ body {
     background: rgba(94, 234, 212, 0.12);
 }
 
-/* Generous, consistent vertical rhythm */
+/* Tight, consistent vertical rhythm */
 .about, .services, .prices, .social-media-section,
 .google-reviews, .gallery, .testimonials, .contact {
-    padding: 6rem 0 !important;
+    padding: 2.5rem 0 2rem !important;
 }
+.services h2, .prices h2, .social-media-section h2,
+.google-reviews h2, .gallery h2, .testimonials h2, .contact h2,
+.about-text h2 {
+    margin-bottom: 1.2rem !important;
+    padding-bottom: 0.6rem !important;
+    margin-top: 0.4rem !important;
+}
+.eyebrow { margin-bottom: 0.5rem !important; }
+.prices-subtitle { margin-bottom: 1.5rem !important; }
 
 /* ===== ABOUT — dark dramatic ===== */
 .about {
@@ -1632,7 +1641,7 @@ body {
 @media (max-width: 768px) {
     .about, .services, .prices, .social-media-section,
     .google-reviews, .gallery, .testimonials, .contact {
-        padding: 3.5rem 0 !important;
+        padding: 2rem 0 1.5rem !important;
     }
     .contact-info { padding: 2.2rem 1.6rem !important; }
     .contact-form { padding: 2.2rem 1.6rem !important; }
