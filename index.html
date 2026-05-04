@@ -34,7 +34,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo" style="display: flex; align-items: center; gap: 20px; width: 100%;">
+            <div class="nav-logo" style="display: flex; align-items: center; gap: 20px; flex: 1; min-width: 0;">
                 <img src="images/drivexpert-logo-navbar.jpeg" alt="DriveXpert Driving School Logo" style="height: 60px; width: auto; max-width: 300px; flex-shrink: 0;">
                 <span class="brand-title">
                   <span class="brand-main">Drive</span><span class="brand-xpert">Xpert</span> <span class="brand-sub">DRIVING SCHOOL</span>
@@ -70,21 +70,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="container" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 40px;">
-            <div class="hero-content" style="flex: 1; min-width: 260px; text-align: center;">
-                <!-- Logo removed as requested -->
-                <h1>Welcome to <span class="brand-main">Drive</span><span class="brand-xpert">Xpert</span> <span class="brand-sub">DRIVING SCHOOL</span></h1>
-                <div style="margin-bottom: 0.7rem;">
-                    <p class="hero-contact-number" style="margin-bottom: 0.2rem; color: #F15A29; animation: calling 2s ease-in-out infinite; display: inline-block;">📞 Contact: 07957 197984</p>
-                    <p class="hero-whatsapp" style="color: #059669; animation: testAnimation 3s ease-in-out infinite; display: inline-block; margin-bottom: 0.2rem;"><i class="fab fa-whatsapp" style="margin-right: 8px; color:#25D366;"></i>👉 <a href="https://wa.me/447957197984" target="_blank" style="color:#059669; text-decoration:none; font-weight:600;">Text to Book Lesson!</a></p>
-                </div>
-                <p class="hero-area-highlight" style="margin-bottom: 0.7rem;">Driving lessons covering Stevenage, Letchworth, Hitchin & surrounding areas</p>
-                <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
-                    <a href="#services" class="cta-button">Our Services</a>
-                    <a href="#contact" class="cta-button">Contact</a>
-                </div>
-                <p class="hero-languages" style="margin-top: 2rem; animation: testAnimation 3s ease-in-out infinite; background: rgba(239, 68, 68, 0.15); color: #fff; font-size: 1.2rem; font-weight: 500; padding: 8px 15px; border-radius: 25px; display: inline-block; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">Help available in English, ਪੰਜਾਬੀ, हिंदी and اردو languages</p>
+        <!-- H1 stays between top and centre -->
+        <div class="hero-title-wrapper">
+            <h1>Welcome to <span class="brand-main">Drive</span><span class="brand-xpert">Xpert</span> <span class="brand-sub">DRIVING SCHOOL</span></h1>
+        </div>
+        <!-- Remaining content centred in the rest of the hero -->
+        <div class="hero-center-wrapper">
+            <p class="hero-contact-number" style="color: #111827; animation: calling 2s ease-in-out infinite;">📞 Contact: 07957 197984</p>
+            <p class="hero-whatsapp" style="color: #059669; animation: testAnimation 3s ease-in-out infinite;"><i class="fab fa-whatsapp" style="margin-right: 8px; color:#25D366;"></i>👉 <a href="https://wa.me/447957197984" target="_blank" style="color:#059669; text-decoration:none; font-weight:600;">Text to Book Lesson!</a></p>
+            <p class="hero-area-highlight">Driving lessons covering Stevenage, Letchworth, Hitchin & surrounding areas</p>
+            <div class="hero-cta-buttons">
+                <a href="#services" class="cta-button">Our Services</a>
+                <a href="#contact" class="cta-button">Contact</a>
             </div>
+            <p class="hero-languages" style="animation: testAnimation 3s ease-in-out infinite; background: rgba(239, 68, 68, 0.15); color: #fff; font-size: 1.2rem; font-weight: 500; padding: 8px 15px; border-radius: 25px; display: inline-block; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">Help available in English, ਪੰਜਾਬੀ, हिंदी and اردو languages</p>
         </div>
     </section>
 
@@ -161,27 +160,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section id="prices" class="prices">
         <div class="container">
             <h2>Our Prices</h2>
+            <p class="prices-subtitle">Flexible packages to suit every learner</p>
             <div class="prices-grid">
-                <div class="price-card">
-                    <i class="fas fa-clock"></i>
+                <div class="price-card price-card-blue">
+                    <div class="price-icon-wrap"><i class="fas fa-clock"></i></div>
                     <h3>One Hour Lesson</h3>
-                    <p>£42/hour</p>
+                    <div class="price-amount">£42<span>/hr</span></div>
+                    <p class="price-desc">Perfect for regular weekly lessons</p>
+                    <a href="#contact" class="price-cta">Book Now</a>
                 </div>
-                <div class="price-card">
-                    <i class="fas fa-calendar-alt"></i>
-                    <h3>10 Hours Lesson</h3>
-                    <p>£400 (Save £20)</p>
+                <div class="price-card price-card-green">
+                    <div class="price-icon-wrap"><i class="fas fa-calendar-alt"></i></div>
+                    <h3>10 Hours Block</h3>
+                    <div class="price-amount">£400<span>/block</span></div>
+                    <p class="price-desc">Save <strong>£20</strong> vs hourly rate</p>
+                    <a href="#contact" class="price-cta">Book Now</a>
                 </div>
-                <div class="price-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>20 Hours Lesson</h3>
-                    <p>£760 (Save £80)</p>
+                <div class="price-card price-card-orange popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="price-icon-wrap"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>20 Hours Block</h3>
+                    <div class="price-amount">£760<span>/block</span></div>
+                    <p class="price-desc">Save <strong>£80</strong> — best value</p>
+                    <a href="#contact" class="price-cta">Book Now</a>
                 </div>
-                <div class="price-card">
-                    <i class="fas fa-bolt"></i>
+                <div class="price-card price-card-purple">
+                    <div class="price-icon-wrap"><i class="fas fa-bolt"></i></div>
                     <h3>Intensive Lesson</h3>
-                    <p>Call for Intensive Lesson Price</p>
+                    <div class="price-amount price-call">Call Us</div>
+                    <p class="price-desc">Fast-track to your test — bespoke pricing</p>
+                    <a href="tel:07957197984" class="price-cta">Call Now</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section id="social-media" class="social-media-section">
+        <div class="container">
+            <h2>Follow Us</h2>
+            <div class="social-media-grid">
+                <a href="https://www.facebook.com/share/1DXGkieNzC/?mibextid=wwXIfr" target="_blank" class="social-media-card social-facebook-card">
+                    <i class="fab fa-facebook-f"></i>
+                    <span class="social-media-name">Facebook</span>
+                    <span class="social-media-handle">DriveXpert Driving School</span>
+                </a>
+                <a href="https://www.instagram.com/drivexpert247/" target="_blank" class="social-media-card social-instagram-card">
+                    <i class="fab fa-instagram"></i>
+                    <span class="social-media-name">Instagram</span>
+                    <span class="social-media-handle">@drivexpert247</span>
+                </a>
+                <a href="https://www.tiktok.com/@drivexpertdrivingschool1" target="_blank" class="social-media-card social-tiktok-card">
+                    <i class="fab fa-tiktok"></i>
+                    <span class="social-media-name">TikTok</span>
+                    <span class="social-media-handle">@drivexpertdrivingschool1</span>
+                </a>
             </div>
         </div>
     </section>
@@ -306,9 +339,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <i class="fas fa-clock"></i>
                         <p>Open 24 hours</p>
                     </div>
-                    <div class="social-links">
-                        <a href="https://www.tiktok.com/@drivexpert12?_t=ZN-8xiWfkh41X4&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
-                    </div>
                 </div>
                 <form class="contact-form" action="https://formspree.io/f/mldnvqpw" method="POST">
                     <input type="text" name="name" placeholder="Your Name" required>
@@ -339,6 +369,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="footer-section">
                     <h3>DriveXpert Driving School</h3>
                     <p>Professional driving services and expertise you can trust.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/share/1DXGkieNzC/?mibextid=wwXIfr" target="_blank" title="Facebook" class="social-facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/drivexpert247/" target="_blank" title="Instagram" class="social-instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@drivexpertdrivingschool1" target="_blank" title="TikTok" class="social-tiktok"><i class="fab fa-tiktok"></i></a>
+                    </div>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
