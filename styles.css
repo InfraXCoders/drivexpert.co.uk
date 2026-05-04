@@ -1397,3 +1397,24 @@ body {
         padding: 2rem 0 1.5rem !important;
     }
 }
+
+/* ===== Tighter spacing override ===== */
+.about, .services, .prices, .social-media-section,
+.google-reviews, .gallery, .testimonials, .contact {
+    padding: 1.25rem 0 1rem !important;
+}
+.services h2, .prices h2, .social-media-section h2,
+.google-reviews h2, .gallery h2, .testimonials h2, .contact h2,
+.about-text h2 {
+    margin-bottom: 0.6rem !important;
+    padding-bottom: 0.35rem !important;
+    margin-top: 0.2rem !important;
+}
+.prices-subtitle { margin-bottom: 0.8rem !important; }
+.services-grid { margin-top: 0.5rem !important; }
+@media (max-width: 768px) {
+    .about, .services, .prices, .social-media-section,
+    .google-reviews, .gallery, .testimonials, .contact {
+        padding: 1rem 0 0.8rem !important;
+    }
+}
