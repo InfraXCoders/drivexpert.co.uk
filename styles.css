@@ -313,30 +313,123 @@ ul { list-style: none; }
 }
 
 /* ===== Responsive ===== */
+/* Laptop / smaller desktop */
+@media (max-width: 1180px) {
+    .container { padding: 0 24px; }
+    .hero-grid { gap: 1.5rem; }
+    .nav-links { gap: 1.1rem; }
+}
+@media (max-width: 1080px) {
+    .hero-grid { grid-template-columns: 1.1fr 1fr; gap: 1.4rem; }
+    .hero-copy h1 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); }
+    .prices-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+    .contact-map { grid-column: 1 / -1; }
+    .contact-map iframe { min-height: 320px; }
+}
+/* Tablet */
 @media (max-width: 980px) {
     .nav-links, .nav-cta { display: none; }
     .nav-toggle { display: inline-flex; margin-left: auto; }
-    .nav.open .nav-links { display: flex; flex-direction: column; gap: .4rem; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 1rem 20px; border-bottom: 1px solid var(--line); }
+    .nav.open { padding-bottom: 1rem; }
+    .nav.open .nav-links {
+        display: flex; flex-direction: column; gap: .2rem;
+        position: absolute; top: 100%; left: 0; right: 0;
+        background: #fff; padding: .8rem 20px;
+        border-bottom: 1px solid var(--line);
+        box-shadow: var(--shadow-md);
+    }
+    .nav.open .nav-links a { padding: .7rem 0; border-bottom: 1px solid var(--line); }
+    .nav.open .nav-links a:last-child { border-bottom: 0; }
     .hero-grid { grid-template-columns: 1fr; }
+    .hero { padding: 2rem 0 2.4rem; }
     .trust-grid { grid-template-columns: repeat(2, 1fr); }
     .services-grid { grid-template-columns: repeat(2, 1fr); }
     .prices-grid { grid-template-columns: repeat(2, 1fr); }
     .about-grid { grid-template-columns: 1fr; }
     .about-media .about-media-2 { width: 45%; right: 0; bottom: -20px; }
-    .reviews-grid, .testimonials-strip { grid-template-columns: repeat(3, 1fr); }
+    .reviews-grid, .testimonials-strip { grid-template-columns: repeat(4, 1fr); }
     .contact-grid { grid-template-columns: 1fr; }
-    .contact-map iframe { min-height: 300px; }
+    .contact-map iframe { min-height: 280px; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .section { padding: 2.2rem 0; }
 }
-@media (max-width: 560px) {
-    .topbar-inner { gap: .5rem; padding: .55rem 16px; justify-content: center; text-align: center; }
-    .topbar-item { font-size: .76rem; }
-    .topbar-langs { order: -1; flex-basis: 100%; background: rgba(20,184,166,.12); color: #5eead4; padding: .35rem .6rem; border-radius: 999px; font-weight: 600; }
-    .hero-bullets { grid-template-columns: 1fr; }
-    .services-grid, .prices-grid { grid-template-columns: 1fr; }
-    .reviews-grid, .testimonials-strip { grid-template-columns: repeat(2, 1fr); }
-    .contact-form .row { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr; }
-    .brand-text small { display: none; }
+/* Mobile */
+@media (max-width: 640px) {
+    .container { padding: 0 16px; }
+    .topbar { font-size: .76rem; }
+    .topbar-inner { gap: .45rem .8rem; padding: .5rem 14px; justify-content: center; text-align: center; }
+    .topbar-item { font-size: .72rem; }
+    .topbar-langs {
+        order: -1; flex-basis: 100%;
+        background: rgba(20,184,166,.18); color: #5eead4;
+        padding: .35rem .6rem; border-radius: 999px;
+        font-weight: 600; font-size: .72rem;
+    }
+    .nav-inner { padding: .55rem 16px; gap: .8rem; }
+    .brand-logo { height: 38px; }
+    .brand-text b, .brand-text .x { font-size: 1rem; }
+    .brand-text small { font-size: .55rem; letter-spacing: .12em; }
+
+    .hero { padding: 1.6rem 0 1.8rem; }
+    .hero-copy h1 { font-size: clamp(1.7rem, 7vw, 2.2rem); margin: .6rem 0 .7rem; }
+    .lead { font-size: .98rem; margin-bottom: 1rem; }
+    .hero-cta { gap: .5rem; }
+    .hero-cta .btn { padding: .75rem 1.05rem; font-size: .9rem; flex: 1; }
+    .hero-bullets { grid-template-columns: 1fr 1fr; gap: .35rem .6rem; }
+    .hero-bullets li { font-size: .85rem; }
+    .hero-card { padding: 1.1rem; }
+    .hero-card-row { gap: .35rem; margin-bottom: .9rem; }
+    .hcol { padding: .6rem .25rem; }
+    .hcol-num { font-size: 1.3rem; }
+    .hcol-lbl { font-size: .7rem; }
+    .quick-form input, .quick-form select { padding: .7rem .8rem; font-size: 16px; }
+
+    .section { padding: 1.8rem 0; }
+    .section-head { margin-bottom: 1.1rem; }
+    .section-head h2 { font-size: clamp(1.4rem, 5.5vw, 1.9rem); }
+    .eyebrow { font-size: .65rem; letter-spacing: 2px; padding: .3rem .7rem; }
+
+    .trust { padding: .8rem 0; }
+    .trust-grid { gap: .6rem; }
+    .trust-item { gap: .55rem; }
+    .trust-item i { width: 36px; height: 36px; font-size: .95rem; }
+    .trust-item strong { font-size: .85rem; }
+    .trust-item span { font-size: .72rem; }
+
+    .services-grid { grid-template-columns: 1fr 1fr; gap: .65rem; }
+    .srv { padding: .9rem .85rem; }
+    .srv i { width: 40px; height: 40px; font-size: .95rem; margin-bottom: .55rem; }
+    .srv h3 { font-size: .92rem; }
+    .srv p { font-size: .8rem; }
+
+    .prices-grid { grid-template-columns: 1fr; gap: .8rem; }
+    .price-card { padding: 1.2rem 1rem; }
+    .price { font-size: 1.7rem; }
+
+    .about-stats { grid-template-columns: 1fr 1fr 1fr; gap: .5rem; }
+    .about-stats > div { padding: .6rem .4rem; }
+    .about-stats strong { font-size: 1.1rem; }
+    .about-stats span { font-size: .72rem; }
+    .about-media { margin-top: .8rem; }
+    .about-media .about-media-2 { display: none; }
+
+    .reviews-grid { grid-template-columns: repeat(3, 1fr); gap: .4rem; }
+    .testimonials-strip { grid-template-columns: repeat(2, 1fr); gap: .4rem; }
+
+    .social-grid { grid-template-columns: 1fr; gap: .55rem; }
+    .social-card { padding: .85rem 1rem; }
+
+    .contact-info, .contact-form { padding: 1.1rem; }
+    .ci-row { padding: .55rem 0; gap: .65rem; }
+    .ci-row i { width: 34px; height: 34px; font-size: .85rem; }
+    .contact-form .row { grid-template-columns: 1fr; gap: .5rem; margin-bottom: .5rem; }
+    .contact-form input, .contact-form select, .contact-form textarea { padding: .75rem .85rem; font-size: 16px; }
+    .contact-map iframe { min-height: 240px; }
+
+    .footer { padding: 1.8rem 0 1rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 1.2rem; padding-bottom: 1.2rem; }
+
+    .float-whats { width: 50px; height: 50px; font-size: 1.4rem; bottom: 14px; right: 14px; }
 }
