@@ -330,7 +330,9 @@ ul { list-style: none; }
     .footer-bottom { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 560px) {
-    .topbar-langs { display: none; }
+    .topbar-inner { gap: .5rem; padding: .55rem 16px; justify-content: center; text-align: center; }
+    .topbar-item { font-size: .76rem; }
+    .topbar-langs { order: -1; flex-basis: 100%; background: rgba(20,184,166,.12); color: #5eead4; padding: .35rem .6rem; border-radius: 999px; font-weight: 600; }
     .hero-bullets { grid-template-columns: 1fr; }
     .services-grid, .prices-grid { grid-template-columns: 1fr; }
     .reviews-grid, .testimonials-strip { grid-template-columns: repeat(2, 1fr); }
