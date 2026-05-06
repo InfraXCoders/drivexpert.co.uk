@@ -216,7 +216,7 @@ ul { list-style: none; }
 .about-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 2rem; align-items: center; }
 .about-copy h2 { margin-bottom: .8rem; font-family: 'Manrope', sans-serif; font-weight: 800; font-size: clamp(1.6rem, 3vw, 2.2rem); }
 .about-copy p { color: var(--ink-2); margin-bottom: 1.2rem; }
-.about-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+.about-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, max-content)); gap: 1rem; }
 .about-stats > div { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: .9rem .8rem; text-align: center; }
 .about-stats strong { display: block; font-size: 1.4rem; color: var(--brand); font-weight: 800; }
 .about-stats span { color: var(--muted); font-size: .82rem; }
