@@ -225,7 +225,7 @@ ul { list-style: none; }
 .about-media .about-media-2 { position: absolute; right: -10px; bottom: -28px; width: 55%; border: 6px solid var(--bg); border-radius: var(--radius); }
 
 /* ===== Reviews ===== */
-.reviews-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: .6rem; margin-bottom: 1rem; }
+.reviews-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: .6rem; margin-bottom: 1rem; }
 .review-img img { aspect-ratio: 1/1; object-fit: cover; border-radius: var(--radius); cursor: zoom-in; transition: transform .25s ease; }
 .review-img img:hover { transform: scale(1.03); }
 .testimonials-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: .6rem; }
