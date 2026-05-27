@@ -12,8 +12,74 @@ const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const openLightbox = (src) => { lightboxImg.src = src; lightbox.hidden = false; document.body.style.overflow = 'hidden'; };
 const closeLightbox = () => { lightbox.hidden = true; lightboxImg.src = ''; document.body.style.overflow = ''; };
-document.querySelectorAll('.review-img img, .t-card img').forEach(img => {
+document.querySelectorAll('.slide img').forEach(img => {
     img.addEventListener('click', () => openLightbox(img.src));
+});
+
+// Sliders
+document.querySelectorAll('[data-slider]').forEach(slider => {
+    const track = slider.querySelector('[data-track]');
+    const prev = slider.querySelector('.prev');
+    const next = slider.querySelector('.next');
+    const dotsWrap = slider.querySelector('[data-dots]');
+    const slides = [...track.children];
+    if (!slides.length) return;
+
+    const visibleCount = () => {
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        return Math.max(1, Math.round(track.clientWidth / (slideWidth + 12)));
+    };
+
+    const buildDots = () => {
+        dotsWrap.innerHTML = '';
+        const pages = Math.max(1, Math.ceil(slides.length / visibleCount()));
+        for (let i = 0; i < pages; i++) {
+            const b = document.createElement('button');
+            b.setAttribute('aria-label', `Page ${i + 1}`);
+            b.addEventListener('click', () => {
+                track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+            });
+            dotsWrap.appendChild(b);
+        }
+        updateDots();
+    };
+
+    const updateDots = () => {
+        const buttons = [...dotsWrap.children];
+        if (!buttons.length) return;
+        const idx = Math.round(track.scrollLeft / track.clientWidth);
+        buttons.forEach((b, i) => b.classList.toggle('active', i === idx));
+    };
+
+    const step = () => slides[0].getBoundingClientRect().width + 12;
+
+    prev?.addEventListener('click', () => {
+        track.scrollBy({ left: -step() * visibleCount(), behavior: 'smooth' });
+    });
+    next?.addEventListener('click', () => {
+        track.scrollBy({ left: step() * visibleCount(), behavior: 'smooth' });
+    });
+    track.addEventListener('scroll', updateDots, { passive: true });
+    window.addEventListener('resize', buildDots);
+
+    buildDots();
+
+    // Autoplay
+    const interval = parseInt(slider.dataset.autoplay || '0', 10);
+    if (interval > 0) {
+        let timer;
+        const tick = () => {
+            const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+            if (atEnd) track.scrollTo({ left: 0, behavior: 'smooth' });
+            else track.scrollBy({ left: step() * visibleCount(), behavior: 'smooth' });
+        };
+        const start = () => { timer = setInterval(tick, interval); };
+        const stop = () => clearInterval(timer);
+        start();
+        slider.addEventListener('mouseenter', stop);
+        slider.addEventListener('mouseleave', start);
+        slider.addEventListener('touchstart', stop, { passive: true });
+    }
 });
 lightbox?.addEventListener('click', (e) => { if (e.target === lightbox || e.target.classList.contains('lightbox-close')) closeLightbox(); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
