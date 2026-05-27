@@ -48,6 +48,7 @@
         </a>
         <nav class="nav-links">
             <a href="#services">Services</a>
+            <a href="#availability">Availability</a>
             <a href="#prices">Prices</a>
             <a href="#about">About</a>
             <a href="#reviews">Reviews</a>
@@ -146,6 +147,35 @@
     </div>
 </section>
 
+<!-- AVAILABILITY -->
+<section id="availability" class="section availability">
+    <div class="container">
+        <div class="section-head">
+            <span class="eyebrow"><i class="far fa-calendar-check"></i> Live Availability</span>
+            <h2>Instructors available <span class="grad-text">this week</span></h2>
+            <p class="lead-sub">Pick an area to see open lesson slots. Tap a slot to request that time.</p>
+        </div>
+
+        <div class="avail-tabs" data-avail-tabs>
+            <button class="avail-tab active" data-area="Stevenage">Stevenage</button>
+            <button class="avail-tab" data-area="Letchworth">Letchworth</button>
+            <button class="avail-tab" data-area="Hitchin">Hitchin</button>
+            <button class="avail-tab" data-area="Baldock">Baldock</button>
+            <button class="avail-tab" data-area="Welwyn">Welwyn</button>
+        </div>
+
+        <div class="avail-legend">
+            <span><i class="dot dot-open"></i> Available</span>
+            <span><i class="dot dot-few"></i> Limited</span>
+            <span><i class="dot dot-full"></i> Fully booked</span>
+        </div>
+
+        <div class="avail-grid" data-avail-grid></div>
+
+        <p class="avail-note"><i class="fas fa-circle-info"></i> Slots refresh every day. Confirmation by WhatsApp or call within 30 minutes.</p>
+    </div>
+</section>
+
 <!-- PRICES -->
 <section id="prices" class="section prices">
     <div class="container">
@@ -158,29 +188,35 @@
                 <div class="price-icon"><i class="fas fa-clock"></i></div>
                 <h3>Single Lesson</h3>
                 <div class="price">£42<span>/hr</span></div>
-                <ul><li>1-hour session</li><li>Pick-up &amp; drop-off</li><li>Pay-as-you-go</li></ul>
+                <div class="price-savings price-savings-empty">Pay-as-you-go rate</div>
+                <ul><li>1-hour session</li><li>Pick-up &amp; drop-off</li><li>Ideal for top-ups</li></ul>
                 <a href="#contact" class="btn btn-outline btn-block">Book Now</a>
             </div>
             <div class="price-card">
                 <div class="price-icon"><i class="fas fa-calendar-alt"></i></div>
                 <h3>10-Hour Block</h3>
+                <div class="price-was">Was <s>£420</s></div>
                 <div class="price">£400<span>/block</span></div>
-                <ul><li>Save £20</li><li>Flexible booking</li><li>Progress tracking</li></ul>
+                <div class="price-savings"><i class="fas fa-tag"></i> Save £20</div>
+                <ul><li>£40/hr effective rate</li><li>Flexible booking</li><li>Progress tracking</li></ul>
                 <a href="#contact" class="btn btn-outline btn-block">Book Now</a>
             </div>
             <div class="price-card featured">
-                <div class="badge">Most Popular</div>
+                <div class="badge">Most Popular · Best Value</div>
                 <div class="price-icon"><i class="fas fa-graduation-cap"></i></div>
                 <h3>20-Hour Block</h3>
+                <div class="price-was">Was <s>£840</s></div>
                 <div class="price">£760<span>/block</span></div>
-                <ul><li>Save £80 — best value</li><li>Mock test included</li><li>Test-day support</li></ul>
+                <div class="price-savings"><i class="fas fa-tag"></i> Save £80</div>
+                <ul><li>£38/hr effective rate</li><li>Mock test included</li><li>Test-day support</li></ul>
                 <a href="#contact" class="btn btn-primary btn-block">Book Now</a>
             </div>
             <div class="price-card">
                 <div class="price-icon"><i class="fas fa-bolt"></i></div>
                 <h3>Intensive Course</h3>
                 <div class="price">Call<span>for quote</span></div>
-                <ul><li>Fast-track plan</li><li>Tailored hours</li><li>Theory support</li></ul>
+                <div class="price-savings price-savings-empty">Bespoke fast-track plan</div>
+                <ul><li>Tailored hours</li><li>Theory support</li><li>Test-day prep</li></ul>
                 <a href="tel:07957197984" class="btn btn-outline btn-block">Call Us</a>
             </div>
         </div>

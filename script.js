@@ -16,6 +16,82 @@ document.querySelectorAll('.slide img').forEach(img => {
     img.addEventListener('click', () => openLightbox(img.src));
 });
 
+// Availability calendar
+(function initAvailability() {
+    const grid = document.querySelector('[data-avail-grid]');
+    const tabsWrap = document.querySelector('[data-avail-tabs]');
+    if (!grid || !tabsWrap) return;
+
+    const SLOTS = ['Morning · 8–12', 'Afternoon · 12–4', 'Evening · 4–8'];
+    const DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    // Deterministic-but-varying availability per area + date
+    const hashCode = (s) => {
+        let h = 0;
+        for (let i = 0; i < s.length; i++) h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+        return Math.abs(h);
+    };
+    const statusFor = (area, dateStr, slotIdx) => {
+        const v = hashCode(area + dateStr + slotIdx) % 10;
+        if (v < 5) return 'open';
+        if (v < 8) return 'few';
+        return 'full';
+    };
+    const labelFor = (status) => status === 'open' ? 'Available' : status === 'few' ? 'Limited' : 'Booked';
+
+    const monthShort = (d) => d.toLocaleDateString('en-GB', { month: 'short' });
+
+    const render = (area) => {
+        grid.innerHTML = '';
+        const today = new Date();
+        for (let i = 0; i < 7; i++) {
+            const d = new Date(today);
+            d.setDate(today.getDate() + i);
+            const dayName = DAY_NAMES[d.getDay()];
+            const dateStr = `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+            const dayCol = document.createElement('div');
+            dayCol.className = 'avail-day';
+            dayCol.innerHTML = `<div class="avail-day-head">
+                <div class="avail-day-name">${dayName}${i === 0 ? ' · Today' : ''}</div>
+                <div class="avail-day-date">${d.getDate()} <small style="font-size:.65rem;color:var(--muted);font-weight:600;">${monthShort(d)}</small></div>
+            </div>`;
+            SLOTS.forEach((slot, idx) => {
+                const status = statusFor(area, dateStr, idx);
+                const btn = document.createElement('button');
+                btn.className = `avail-slot ${status}`;
+                btn.disabled = status === 'full';
+                btn.innerHTML = `<span>${slot.split(' · ')[1]}</span><span class="dot dot-${status === 'open' ? 'open' : status === 'few' ? 'few' : 'full'}"></span>`;
+                btn.title = `${slot.split(' · ')[0]} · ${labelFor(status)}`;
+                if (status !== 'full') {
+                    btn.addEventListener('click', () => {
+                        const contactSection = document.getElementById('contact');
+                        const form = document.querySelector('.contact-form');
+                        if (form) {
+                            const msgField = form.querySelector('textarea[name=message]');
+                            const svcField = form.querySelector('select[name=service]');
+                            const slotLabel = `${dayName} ${d.getDate()} ${monthShort(d)} · ${slot}`;
+                            if (msgField) msgField.value = `Hi, I'd like to book a lesson in ${area} — preferred slot: ${slotLabel}.`;
+                            if (svcField && !svcField.value) svcField.value = 'Adult Lessons';
+                        }
+                        contactSection?.scrollIntoView({ behavior: 'smooth' });
+                    });
+                }
+                dayCol.appendChild(btn);
+            });
+            grid.appendChild(dayCol);
+        }
+    };
+
+    tabsWrap.addEventListener('click', (e) => {
+        const tab = e.target.closest('.avail-tab');
+        if (!tab) return;
+        tabsWrap.querySelectorAll('.avail-tab').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        render(tab.dataset.area);
+    });
+    render('Stevenage');
+})();
+
 // Sliders
 document.querySelectorAll('[data-slider]').forEach(slider => {
     const track = slider.querySelector('[data-track]');
