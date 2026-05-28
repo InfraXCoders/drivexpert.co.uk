@@ -76,9 +76,10 @@ ul { list-style: none; }
 .brand { display: flex; align-items: center; gap: .65rem; }
 .brand-logo { height: 46px; width: auto; border-radius: 10px; }
 .brand-text { display: flex; flex-direction: column; line-height: 1; font-family: 'Manrope', sans-serif; }
-.brand-text b { font-weight: 800; font-size: 1.1rem; color: var(--ink); display: inline; }
-.brand-text .x { color: var(--accent); font-weight: 800; font-size: 1.1rem; display: inline; }
-.brand-text small { font-size: .62rem; letter-spacing: .18em; color: var(--muted); margin-top: 2px; }
+.brand-top { display: flex; align-items: baseline; gap: .22em; }
+.brand-text b { font-weight: 800; font-size: 1.1rem; color: var(--ink); }
+.brand-text .x { color: var(--accent); font-weight: 800; font-size: 1.1rem; }
+.brand-text small { font-size: .6rem; letter-spacing: .14em; color: var(--muted); margin-top: 3px; text-transform: uppercase; }
 .nav-links { display: flex; gap: 1.5rem; margin-left: auto; }
 .nav-links a { font-weight: 600; color: var(--ink-2); padding: .4rem 0; position: relative; }
 .nav-links a:hover { color: var(--ink); }
