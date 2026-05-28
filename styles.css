@@ -307,6 +307,7 @@ ul { list-style: none; }
 .slider { position: relative; padding: 0 2.6rem; }
 .slider-track {
     display: flex; gap: .8rem;
+    align-items: flex-start;
     overflow-x: auto; overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
@@ -317,14 +318,14 @@ ul { list-style: none; }
 .slider-track::-webkit-scrollbar { display: none; }
 .slide { flex: 0 0 calc((100% - 2.4rem) / 4); scroll-snap-align: start; }
 .slide img {
-    width: 100%; object-fit: cover;
+    width: 100%; height: auto;
+    object-fit: contain;
     border-radius: var(--radius); cursor: zoom-in;
+    background: #fff; border: 1px solid var(--line);
     box-shadow: var(--shadow-sm);
     transition: transform .25s ease, box-shadow .25s ease;
 }
 .slide img:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-.review-slide img { aspect-ratio: 3/4; }
-.pass-slide img { aspect-ratio: 3/4; }
 
 .slider-btn {
     position: absolute; top: 50%; transform: translateY(-50%);
