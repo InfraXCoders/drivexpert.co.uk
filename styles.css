@@ -90,6 +90,19 @@ ul { list-style: none; }
 .ticker-item em { font-style: normal; opacity: .8; font-size: .75rem; }
 .ticker-sep { opacity: .5; }
 
+/* Ticker — mobile */
+@media (max-width: 980px) {
+    .ticker-wrap { font-size: .75rem; padding: .32rem 0; }
+    .ticker-item { padding: 0 .5rem; }
+    .ticker-track { animation-duration: 32s; }
+}
+@media (max-width: 640px) {
+    .ticker-wrap { font-size: .7rem; letter-spacing: .2px; padding: .28rem 0; }
+    .ticker-item { padding: 0 .4rem; }
+    .ticker-item i { display: none; }          /* hide icons to save space */
+    .ticker-track { animation-duration: 26s; } /* slightly faster on small screens */
+}
+
 /* ===== Nav ===== */
 .nav {
     position: sticky; top: 0; z-index: 100;
