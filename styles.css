@@ -65,6 +65,31 @@ ul { list-style: none; }
 .topbar-item a { color: #fff; font-weight: 600; }
 .topbar-langs { letter-spacing: .5px; }
 
+/* ===== Ticker ===== */
+.ticker-wrap {
+    background: var(--brand);
+    color: #fff;
+    font-size: .8rem;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: .38rem 0;
+    letter-spacing: .3px;
+}
+@keyframes ticker-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.ticker-track {
+    display: inline-block;
+    animation: ticker-scroll 40s linear infinite;
+}
+.ticker-wrap:hover .ticker-track { animation-play-state: paused; }
+.ticker-item { padding: 0 .6rem; }
+.ticker-item i { margin-right: .3rem; opacity: .85; }
+.ticker-item em { font-style: normal; opacity: .8; font-size: .75rem; }
+.ticker-sep { opacity: .5; }
+
 /* ===== Nav ===== */
 .nav {
     position: sticky; top: 0; z-index: 100;
