@@ -454,6 +454,9 @@ ul { list-style: none; }
 .footer a:hover { color: #fff; }
 .footer .muted { margin: .5rem 0 .8rem; font-size: .9rem; max-width: 360px; }
 .footer-bottom { display: flex; justify-content: space-between; gap: 1rem; padding-top: 1rem; font-size: .82rem; color: #94a3b8; }
+.footer-designed { text-align: center; padding: .6rem 0 .2rem; font-size: .75rem; color: #64748b; border-top: 1px solid #1e293b; margin-top: .5rem; }
+.footer-designed a { color: #94a3b8; text-decoration: none; }
+.footer-designed a:hover { color: #fff; }
 
 /* ===== Lightbox ===== */
 .lightbox { position: fixed; inset: 0; background: rgba(15,23,42,.92); z-index: 1000; display: grid; place-items: center; padding: 2rem; }
