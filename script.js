@@ -16,6 +16,36 @@ document.querySelectorAll('.slide img').forEach(img => {
     img.addEventListener('click', () => openLightbox(img.src));
 });
 
+// Ready to Pass lightbox
+(function initReadyLightbox() {
+    const box = document.getElementById('readyLightbox');
+    if (!box) return;
+    const boxImg = box.querySelector('img');
+    const closeBtn = box.querySelector('.rl-close');
+    const prevBtn = box.querySelector('.rl-prev');
+    const nextBtn = box.querySelector('.rl-next');
+    const imgs = Array.from(document.querySelectorAll('.ready-card img'));
+    let idx = 0;
+    const show = i => {
+        idx = (i + imgs.length) % imgs.length;
+        boxImg.src = imgs[idx].src;
+        boxImg.alt = imgs[idx].alt;
+    };
+    const open = i => { show(i); box.classList.add('open'); document.body.style.overflow = 'hidden'; };
+    const close = () => { box.classList.remove('open'); boxImg.src = ''; document.body.style.overflow = ''; };
+    imgs.forEach((img, i) => img.addEventListener('click', () => open(i)));
+    closeBtn.addEventListener('click', close);
+    prevBtn.addEventListener('click', e => { e.stopPropagation(); show(idx - 1); });
+    nextBtn.addEventListener('click', e => { e.stopPropagation(); show(idx + 1); });
+    box.addEventListener('click', e => { if (e.target === box) close(); });
+    document.addEventListener('keydown', e => {
+        if (!box.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowLeft') show(idx - 1);
+        else if (e.key === 'ArrowRight') show(idx + 1);
+    });
+})();
+
 // Availability calendar
 (function initAvailability() {
     const grid = document.querySelector('[data-avail-grid]');
